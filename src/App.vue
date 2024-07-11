@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="progress-bars">
+      <CircleProgress 
+        :maxValue="108"
+        :value="36"
+        :targetValue="80"
+        size='240'
+      />
+      <CircleProgress
+        :maxValue="108"
+        :value="80"
+        :targetValue="80"
+        size='240'
+      />
+      <CircleProgress
+        :maxValue="108"
+        :value="108"
+        :targetValue="80"
+        size='240'
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CircleProgress from './components/CircleProgress.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    CircleProgress,
+  },
+};
+
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
+
+.progress-bars {
+  display: flex;
+  justify-content: space-between; 
+  flex-direction: column;
+  gap: 30px
+}
+
+
 </style>
